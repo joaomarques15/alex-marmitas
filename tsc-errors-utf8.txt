@@ -1,0 +1,2 @@
+﻿src/components/Hero.tsx(36,21): error TS2353: Object literal may only specify known properties, and 'mass' does not exist in type 'Boolean'.
+src/components/MarmitaModel.tsx(1,8): error TS6133: 'React' is declared but its value is never read.

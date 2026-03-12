@@ -1,0 +1,75 @@
+.hero-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #050608;
+}
+
+.canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Let pointer events through to 2D */
+}
+
+/* Three.js canvas should handle its own events based on props */
+.canvas-container > div {
+  pointer-events: auto !important;
+}
+
+.hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10%;
+  pointer-events: none; /* Let canvas capture mouse outside text */
+}
+
+.hero-text-block {
+  max-width: 600px;
+  pointer-events: auto; /* Re-enable events for buttons and text selection */
+  z-index: 10;
+}
+
+.hero-text-block h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  background: linear-gradient(to right, #ffffff, #ffa07a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  text-shadow: 0 10px 30px rgba(255, 87, 34, 0.2);
+}
+
+.hero-text-block p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.btn-hero {
+  padding: 16px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .hero-text-block {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero-content {
+    justify-content: center;
+  }
+}
